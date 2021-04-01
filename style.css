@@ -22,6 +22,41 @@ nav.menu a {
   display: block;
   padding: 10px;
 }
+.hamburger {
+  display: none;
+  width: 32px;
+  height: 32px;
+  border: 1px solid black;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.hamburger > div {
+  width: 80%;
+  height: 10%;
+  background-color: black;
+  position: absolute;
+  transition: transform 250ms, opacity 250ms;
+}
+.hamburger > div:nth-child(1) {
+  transform: rotate(0) translateY(-250%);
+}
+.hamburger > div:nth-child(2) {
+  transform: rotate(0);
+}
+.hamburger > div:nth-child(3) {
+  transform: rotate(0) translateY(250%);
+}
+.hamburger.open > div:nth-child(1) {
+  transform: rotate(765deg) translateY(0);
+}
+.hamburger.open > div:nth-child(2) {
+  transform: rotate(720deg);
+  opacity: 0;
+}
+.hamburger.open > div:nth-child(3) {
+  transform: rotate(675deg) translateY(0);
+}
 
 @media (max-width: 720px) {
   nav.menu {
